@@ -19,9 +19,10 @@ $( document ).ready(function () {
     $(".dropdown-button").dropdown();
     $('select').material_select();
     $('.datepicker').pickadate({
-        format: 'mmmmdd,yyyy',
-        formatSubmit: 'mmmmdd,yyyy',
-        selectMonths: true, // Creates a dropdown to control month selectYears: 15, // Creates a dropdown of 15 years to control year, today: 'Today',
+        format: 'mmmm dd, yyyy',
+        formatSubmit: 'mmmm dd, yyyy',
+        selectMonths: true,
+        selectYears: 120, today: 'Today',// Creates a dropdown to control month selectYears: 15, // Creates a dropdown of 15 years to control year, today: 'Today',
         clear: 'Clear',
         close: 'Ok',
         closeOnSelect: false // Close upon selecting a date,

@@ -28,8 +28,11 @@
 
   <div class="field">
     <%= form.label :date_of_birth %>
-    <%= form.date_select :date_of_birth %>
+    <%= form.text_field :date_of_birth, prompt: "Date of Birth", class: "datepicker", :value =>
+    (form.object.date_of_birth.strftime('%B %d, %Y') if form.object.date_of_birth != nil)%>
   </div>
+  
+  
 
   <div class="field">
     <%= form.label :phone %>
@@ -40,10 +43,11 @@
     <%= form.label :role %>
     <%= form.text_field :role %>
   </div>
+  
 
-  <div class="field">
-    <%= form.label :active %>
+  <div class="row">
     <%= form.check_box :active %>
+    <%= form.label :active %>
   </div>
 
   <div class="actions">
