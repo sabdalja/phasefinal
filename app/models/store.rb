@@ -1,4 +1,5 @@
 class Store < ApplicationRecord
+  STATE = ["PA", "OH", "WV" ]
 # Callbacks
   before_save :reformat_phone
   

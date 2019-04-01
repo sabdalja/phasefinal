@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :pay_level %>
-    <%= form.number_field :pay_level %>
+    <%= form.collection_select :pay_level, Assignment::PAYLEVEL, :to_s, :to_s, :include_blank => true %> <br />
   </div>
 
   <div class="actions">
