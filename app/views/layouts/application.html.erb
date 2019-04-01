@@ -13,7 +13,11 @@
   <li><%= link_to "Add an Employee", new_employee_path %></li>
   <li><%= link_to "Active Employees", employee_active_path %></li>
   <li><%= link_to "Inactive Employees" , employee_inactive_path%></li>
-
+  <li><%= link_to 'Employees Under 18', employee_younger_than_18_path%></li>
+  <li><%= link_to 'Employees 18 & Above', employee_is_18_or_older_path%></li>
+  <li><%= link_to 'Regular Employees', employee_regulars_path%></li>
+  <li><%= link_to 'Store Managers', employee_managers_path%></li>
+  <li><%= link_to 'Administrators', employee_admins_path%></li>
   
 
 
@@ -66,14 +70,15 @@
 
 
  <div class="row">
- <div class="col s8 center">
+   <div class="col s2 center"></div>  
+ <div class="col s9 center">
      
  <%= yield %>
  </div>
- <div class="col s1">
+ <div class="col s2">
  </div>
   <div class="row">
- <div class="col s8 center">
+ <div class="col s12 center">
  <%= render partial: 'partials/footer' %>
  </div>
 

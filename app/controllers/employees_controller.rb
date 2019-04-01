@@ -29,9 +29,28 @@ class EmployeesController < ApplicationController
       @employee_inactive = Employee.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
   
-  def alphabetical1
-      @employee_alphabetical = Employee.alphabetical
+  def under18
+    @employee_younger_than_18 = Employee.younger_than_18.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
+  
+  def above18
+    @employee_is_18_or_older = Employee.is_18_or_older.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def regEmployees
+    @employee_regulars = Employee.regulars.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def manEmployees
+    @employee_managers = Employee.managers.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def adEmployees
+    @employee_admins = Employee.admins.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+    
+  
 
   # POST /employees
   # POST /employees.json

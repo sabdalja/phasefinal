@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Active Stores', store_active_path %> 
-<%= link_to 'Stores', stores_path %> 
+
+<table>
+    <tbody>
+      <tr>
+         <td> <%= link_to '<- Back to All Stores ', stores_path %>   </td>
+         <td><%= link_to 'List of All Active Stores', store_active_path %> </td>
+      </tr>
+    </tbody>
+</table>
+
 <h1>Inactive Stores</h1>
 
 <table>
@@ -41,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Store', new_store_path %>
+<%= link_to 'Click to Create New Store', new_store_path %>

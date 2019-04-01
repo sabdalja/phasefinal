@@ -1,7 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Inactive Employees', employee_inactive_path %> 
-<%= link_to 'Employees', employees_path %> 
+<table>
+    <tbody>
+      <tr>
+         <td> <%= link_to ' <- Back to All Employees ', employees_path %> </td>
+         <td> <%= link_to 'Inactive Employees | ', employee_inactive_path %> </td>
+         <td> <%= link_to 'Employees Under 18 | ', employee_younger_than_18_path%></td>
+         <td> <%= link_to 'Employees 18 & Above | ', employee_is_18_or_older_path%></td>
+         <td> <%= link_to 'Regulars | ', employee_regulars_path%></td>
+         <td> <%= link_to 'Managers | ', employee_managers_path%></td>
+         <td> <%= link_to 'Admins | ', employee_admins_path%></td>
+      </tr>
+    </tbody>
+</table>
 <h1>Active Employees</h1>
 
 <table>
@@ -38,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to 'Click to Create New Employee', new_employee_path %>

@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<table>
+    <tbody>
+      <tr>
+         <td> <%= link_to "List of All Current Assignments", assignment_current_path %> </td>
+         <td> <%= link_to "List of All Past Assignments" , assignment_past_path%> </td>   
+      </tr>
+    </tbody>
+</table>
+
 <h1>Assignments</h1>
 
 
@@ -33,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Assignment', new_assignment_path %>
+<%= link_to ' Click to Create New Assignment', new_assignment_path %>

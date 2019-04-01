@@ -12,6 +12,15 @@ Rails.application.routes.draw do
 
   get "active1" , to: "employees#active1" , as: :employee_active
   get "inactive1" , to: "employees#inactive1" , as: :employee_inactive
+  get "under18" , to: "employees#under18" , as: :employee_younger_than_18
+  get "above18" , to: "employees#above18" , as: :employee_is_18_or_older
+  get "regEmployees", to: "employees#regEmployees" , as: :employee_regulars
+  get "manEmployees", to: "employees#manEmployees" , as: :employee_managers
+  get "adEmployees", to: "employees#adEmployees" , as: :employee_admins
+
+  
+
+
 
   get "current" , to: "assignments#current" , as: :assignment_current
   get "past" , to: "assignments#past" , as: :assignment_past

@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
+
 <table>
     <tbody>
       <tr>
+         <td> <%= link_to ' <- Back to All Employees ', employees_path %> </td>
          <td> <%= link_to 'Inactive Employees | ', employee_inactive_path %> </td>
          <td><%= link_to 'Active Employees | ', employee_active_path %> </td>   
          <td> <%= link_to 'Employees Under 18 | ', employee_younger_than_18_path%></td>
          <td> <%= link_to 'Employees 18 & Above | ', employee_is_18_or_older_path%></td>
          <td> <%= link_to 'Regulars | ', employee_regulars_path%></td>
          <td> <%= link_to 'Managers | ', employee_managers_path%></td>
-         <td> <%= link_to 'Admins | ', employee_admins_path%></td>
       </tr>
     </tbody>
 </table>
-<h1>Employees</h1>
+<h1>Administrators</h1>
 
 <table>
   <thead>
@@ -29,7 +30,7 @@
   </thead>
 
   <tbody>
-    <% @employees.each do |employee| %>
+    <% @employee_admins.each do |employee| %>
       <tr>
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
