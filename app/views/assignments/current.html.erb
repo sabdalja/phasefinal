@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Assignments</h1>
-
+<h1>Current Assignments</h1>
 
 <table>
   <thead>
@@ -16,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @assignments.each do |assignment| %>
+    <% @assignment_current.each do |assignment| %>
       <tr>
         <td><%= assignment.store_id %></td>
         <td><%= assignment.employee_id %></td>

@@ -20,6 +20,16 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1/edit
   def edit
   end
+  
+  def current
+    @assignment_current = Assignment.current.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def past
+    @assignment_past = Assignment.past.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  
 
   # POST /assignments
   # POST /assignments.json
