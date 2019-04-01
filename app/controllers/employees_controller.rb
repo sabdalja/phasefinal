@@ -20,6 +20,18 @@ class EmployeesController < ApplicationController
   # GET /employees/1/edit
   def edit
   end
+  
+  def active1
+      @employee_active = Employee.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def inactive1
+      @employee_inactive = Employee.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def alphabetical1
+      @employee_alphabetical = Employee.alphabetical
+  end
 
   # POST /employees
   # POST /employees.json

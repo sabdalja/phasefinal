@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BookManager :: <%= controller.controller_name.capitalize %> - <%= controller.action_name.capitalize %></title>
+  <title>Creamery :: <%= controller.controller_name.capitalize %> - <%= controller.action_name.capitalize %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
   <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
- <li><%= link_to "List Employees", employees_path %></li>
- <li><%= link_to "Add an Employee", new_employee_path %></li>
+  <li><%= link_to "List Employees", employees_path %></li>
+  <li><%= link_to "Add an Employee", new_employee_path %></li>
+  <li><%= link_to "Active Employees", employee_active_path %></li>
+  <li><%= link_to "Inactive Employees" , employee_inactive_path%></li>
+
+  
+
+
 </ul>
 
 <ul id="dropdown2" class="dropdown-content">
- <li><%= link_to "List Stores", stores_path %></li>
- <li><%= link_to "Add a Store", new_store_path %></li>
+  <li><%= link_to "List Stores", stores_path %></li>
+  <li><%= link_to "Add a Store", new_store_path %></li>
+  <li><%= link_to "Active Stores", store_active_path %></li>
+  <li><%= link_to "Inactive Stores", store_inactive_path %></li>
+
+
+
+ 
+
 </ul>
 
 <ul id="dropdown3" class="dropdown-content">
  <li><%= link_to "List Assignments", assignments_path %></li>
  <li><%= link_to "Add an Assignment", new_assignment_path %></li>
+
 </ul>
 
 
 <nav>
  <div class="nav-wrapper">
  &nbsp&nbsp
- <a href="/" class="brand-logo">The Amazing Marvellous Creamery</a>
+ <a href="/" class="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwirwY_RsK7hAhWwm-AKHfFoB4kQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F171699804514006839%2F&psig=AOvVaw3pUk7i0mXHHKFCR5jsmhNs&ust=1554190419707484">A&M Official Website </a>
+
+
+
+
  <ul class="right">
 
  <!-- Dropdown Trigger -->
@@ -34,11 +53,15 @@
 class="material-icons right">arrow_drop_down</i></a></li>
 <li><a class="dropdown-button" href="/stores" data-activates="dropdown2">Stores<i
 class="material-icons right">arrow_drop_down</i></a></li>
-<li><a class="dropdown-button" href="/stores" data-activates="dropdown3">Assignments<i
+<li><a class="dropdown-button" href="/assignments" data-activates="dropdown3">Assignments<i
 class="material-icons right">arrow_drop_down</i></a></li>
  </ul>
  </div>
 </nav>
+
+<h1 style="color:black;font-size:40px;text-align: center "> The Amazing & Marvellous Creamery!</h1>
+
+  
 
 
  <div class="row">

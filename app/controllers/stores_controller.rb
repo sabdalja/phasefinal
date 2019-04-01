@@ -20,6 +20,18 @@ class StoresController < ApplicationController
   # GET /stores/1/edit
   def edit
   end
+  
+  def active
+      @store_active = Store.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def inactive
+      @store_inactive = Store.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def alphabetical
+      @store_alphabetical = Store.alphabetical
+  end
 
   # POST /stores
   # POST /stores.json
