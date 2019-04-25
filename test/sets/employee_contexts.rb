@@ -6,7 +6,9 @@ module Contexts
       @cindy = FactoryBot.create(:employee, first_name: "Cindy", last_name: "Crawford", ssn: "084-35-9822", date_of_birth: 17.years.ago.to_date)
       @ralph = FactoryBot.create(:employee, first_name: "Ralph", last_name: "Wilson", active: false, date_of_birth: 16.years.ago.to_date)
       @ben = FactoryBot.create(:employee, first_name: "Ben", last_name: "Sisko", role: "manager", phone: "412-268-2323")
+      puts @ben
       @kathryn = FactoryBot.create(:employee, first_name: "Kathryn", last_name: "Janeway", role: "manager", date_of_birth: 30.years.ago.to_date)
+      puts @kathryn
       @alex = FactoryBot.create(:employee, first_name: "Alex", last_name: "Heimann", role: "admin")
     end
     

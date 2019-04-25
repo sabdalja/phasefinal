@@ -5,6 +5,8 @@ module Contexts
       @oakland = FactoryBot.create(:store, name: "Oakland", phone: "412-268-8211")
       @hazelwood = FactoryBot.create(:store, name: "Hazelwood", active: false)
       @cmu = FactoryBot.create(:store)
+      puts @oakland
+      puts @cmu
     end
     
     def remove_stores

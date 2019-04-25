@@ -7,6 +7,7 @@ class Employee < ApplicationRecord
   # Relationships
   has_many :assignments
   has_many :stores, through: :assignments
+  has_one :shift, through: :assignments
   
   # Validations
   validates_presence_of :first_name, :last_name, :date_of_birth, :ssn, :role

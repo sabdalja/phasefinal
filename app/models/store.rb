@@ -6,6 +6,9 @@ class Store < ApplicationRecord
   # Relationships
   has_many :assignments
   has_many :employees, through: :assignments  
+  has_many :shifts, through: :assignments
+  has_many :flavors, through: :store_flavors
+
   
   # Validations
   # make sure required fields are present

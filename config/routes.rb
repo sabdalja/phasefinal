@@ -11,8 +11,18 @@ Rails.application.routes.draw do
   resources :stores
   resources :assignments
   resources :employees
+  resources :users
+  resources :flavors
+  resources :store_flavors
+  resources :shifts
+  resources :shift_jobs
+  resources :jobs
+
+
 
   root to: 'home#home', as: :home
+
+ # root to: 'home#home', as: :home
   get "active" , to: "stores#active" , as: :store_active
   get "inactive" , to: "stores#inactive" , as: :store_inactive
 
@@ -31,8 +41,11 @@ Rails.application.routes.draw do
   get "current" , to: "assignments#current" , as: :assignment_current
   get "past" , to: "assignments#past" , as: :assignment_past
 
-
-
+ # get "upcoming" , to: "shifts#upcoming" , as: :shift_upcoming
+ 
+ resources :demos, only: [:new, :create, :destroy]
+ root 'demos#new'
+  
   
 
   

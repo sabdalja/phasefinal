@@ -27,5 +27,31 @@ FactoryBot.define do
     end_date {1.month.ago.to_date}
     pay_level {1}
   end
+  
+  factory :user do
+    association :employee
+    email  {"sabdalja@andrew.cmu.edu"}
+    password_digest {"sameer"}
+  end
+  
+  factory :shift do
+    association :assignment
+    date  { Date.today }
+    start_time { Time.now+5.hours }
+    end_time { Time.now+6.hours }
+    notes { "They worked well" }
+  end
+  
+  factory :job do
+    name {"worker"}
+    description {"Filled ice cream cones and cups (worked behind counter)"}
+    active {1}
+  end
+  
+  factory :flavor do
+    name {"chocolate"}
+    active {1}
+  end
+  
 
 end
