@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Active Jobs</h1>
+<h1>Inactive Jobs</h1>
 
 <table>
   <thead>
@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @job_active.each do |job| %>
+    <% @job_inactive.each do |job| %>
       <tr>
         <td><%= job.name %></td>
         <td><%= job.description %></td>
@@ -27,5 +27,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Job', new_job_path %>

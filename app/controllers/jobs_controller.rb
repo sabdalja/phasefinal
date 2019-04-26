@@ -21,6 +21,13 @@ class JobsController < ApplicationController
   def edit
   end
 
+   def active2
+      @job_active = Job.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+   end
+  
+  def inactive2
+      @job_inactive = Job.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
   # POST /jobs
   # POST /jobs.json
   def create

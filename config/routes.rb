@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
 
   get "upcoming" , to: "shifts#upcoming" , as: :shift_upcoming
- # get "past1" , to: "shifts#past1" , as: :shift_past
+  get "past1" , to: "shifts#past1" , as: :shift_past
   get "bystore" , to: "shifts#bystore" , as: :shift_by_store
   get "byemployee" , to: "shifts#byemployee" , as: :shift_by_employee
   get "chronological" , to: "shifts#chronological" , as: :shift_chronological
@@ -60,6 +60,11 @@ Rails.application.routes.draw do
   
   
     get "active2" , to: "jobs#active2" , as: :job_active
+    get "inactive2" , to: "jobs#inactive2" , as: :job_inactive
+
+    get "active3" , to: "flavors#active3" , as: :flavor_active
+    get "inactive3" , to: "flavors#inactive3" , as: :flavor_inactive
+
 
  
  resources :demos, only: [:new, :create, :destroy]

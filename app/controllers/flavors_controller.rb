@@ -20,6 +20,14 @@ class FlavorsController < ApplicationController
   # GET /flavors/1/edit
   def edit
   end
+  
+  def active3
+      @flavor_active = Flavor.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+   end
+  
+  def inactive3
+      @flavor_inactive = Flavor.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
 
   # POST /flavors
   # POST /flavors.json

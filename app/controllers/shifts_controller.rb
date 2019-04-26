@@ -25,7 +25,7 @@ class ShiftsController < ApplicationController
       @shift_upcoming = Shift.upcoming.paginate(:page => params[:page]).per_page(10)
   end
   
-  def past
+  def past1
       @shift_past = Shift.past.paginate(:page => params[:page]).per_page(10)
   end
   
