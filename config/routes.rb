@@ -17,12 +17,19 @@ Rails.application.routes.draw do
   resources :shifts
   resources :shift_jobs
   resources :jobs
+  resources :demos
 
 
 
   root to: 'home#home', as: :home
 
  # root to: 'home#home', as: :home
+ #resources :demos, only: [:new, :create, :destroy]
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'demos#new', as: 'login'
+  get 'logout', to: 'demos#destroy', as: 'logout'
+
+  root 'demos#new'
   get "active" , to: "stores#active" , as: :store_active
   get "inactive" , to: "stores#inactive" , as: :store_inactive
 
@@ -44,7 +51,7 @@ Rails.application.routes.draw do
  # get "upcoming" , to: "shifts#upcoming" , as: :shift_upcoming
  
  resources :demos, only: [:new, :create, :destroy]
- root 'demos#new'
+ #root 'demos#new'
   
   
 

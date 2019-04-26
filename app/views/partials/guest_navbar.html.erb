@@ -1,0 +1,40 @@
+
+<html>
+<head>
+  <title>Creamery :: <%= controller.controller_name.capitalize %> - <%= controller.action_name.capitalize %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body  style="background-color:#e5efff;">
+  
+
+
+
+
+
+  
+
+
+ <div class="row">
+   <div class="col s1 center"></div>  
+ <div class="col s9 center">
+     
+ <%= yield %>
+ </div>
+ <div class="col s11">
+ </div>
+  <div class="row">
+ <div class="col s12 center">
+ <%= render partial: 'partials/footer' %>
+ </div>
+
+ </div>
+
+</body>
+
+<%= javascript_include_tag "application" %>
+<% flash.each do |message_type, message| %>
+     <%= javascript_tag "Materialize.toast('#{message}', 4000)" %>
+     <% end %>
+
+</html>
