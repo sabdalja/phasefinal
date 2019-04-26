@@ -2,15 +2,16 @@ class DemosController < ApplicationController
     def new
     end
 
-    def create
-        user = User.find_by_email(params[:email])
-        if user && user.authenticate(params[:password])
+   
+     def create
+      user = User.find_by(email: params[:demo][:email].downcase) 
+      if user && user.authenticate(params[:demo][:password])
           session[:employee_id] = user.employee.id
-          redirect_to root_url, notice: "You are Logged in!"
-        else
-          flash.now[:alert] = "Email or password is invalid"
-          render "new"
-        end
+          redirect_to home_path
+      else
+          flash.now[:danger] = "Invalid email or password"
+          render 'new'
+      end
     end
       
         

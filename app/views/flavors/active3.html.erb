@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
-
+<table>
+    <tbody>
+      <tr>
+         <td> <%= link_to ' <- Back to All Flavors ', flavors_path %> </td>
+         <td> <%= link_to 'Inactive Flavors | ', flavor_inactive_path%></td>
+        
+      </tr>
+    </tbody>
+</table>
 <h1>Active Flavors</h1>
 
 <table>
@@ -17,11 +25,21 @@
         <td><%= flavor.name %></td>
         <td><%= flavor.active %></td>
         <td><%= link_to 'Show', flavor %></td>
+        <%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
         <td><%= link_to 'Edit', edit_flavor_path(flavor) %></td>
         <td><%= link_to 'Destroy', flavor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
+
+<%= link_to 'Add New Flavor', new_flavor_path %>
+<% end %>
+

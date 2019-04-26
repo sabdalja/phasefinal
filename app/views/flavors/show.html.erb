@@ -9,6 +9,8 @@
   <strong>Active:</strong>
   <%= @flavor.active %>
 </p>
+<%  if valid_employee!=nil && valid_employee.role=="admin" %>
 
 <%= link_to 'Edit', edit_flavor_path(@flavor) %> |
+<% end %>
 <%= link_to 'Back', flavors_path %>

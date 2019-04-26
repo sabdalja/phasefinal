@@ -25,5 +25,8 @@
   <%= @assignment.pay_level %>
 </p>
 
+<%  if valid_employee!=nil && valid_employee.role=="admin" %>
+
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%end%>
 <%= link_to 'Back', assignments_path %>

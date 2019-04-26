@@ -31,13 +31,19 @@
         <td><%= assignment.end_date %></td>
         <td><%= assignment.pay_level %></td>
         <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
 
-<%= link_to 'Click to Create New Assignment', new_assignment_path %>
+<%= link_to 'Click to Create New Store', new_store_path %>
+<% end %>

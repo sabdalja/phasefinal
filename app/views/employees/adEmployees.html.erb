@@ -40,8 +40,11 @@
         <td><%= employee.role %></td>
         <td><%= employee.active %></td>
         <td><%= link_to 'Show', employee %></td>
+        <%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
@@ -49,4 +52,7 @@
 
 <br>
 
+<%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
 <%= link_to 'Click to Create New Employee', new_employee_path %>
+<%end%>

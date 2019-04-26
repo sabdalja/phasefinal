@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<table>
+    <tbody>
+      <tr>
+         <td> <%= link_to ' <- Back to All Shifts ', shifts_path %> </td>
+         <td> <%= link_to 'Past Shifts | ', shift_past_path %> </td>
+         <td> <%= link_to 'Shifts By Employee | ', shift_by_employee_path%></td>
+         <td> <%= link_to 'Shifts By Store | ', shift_by_store_path%></td>
+         <td> <%= link_to 'Shifts: Chronological | ', shift_chronological_path%></td>
+      </tr>
+    </tbody>
+</table>
 
 <h1>Upcoming Shifts</h1>
 

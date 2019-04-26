@@ -7,9 +7,11 @@
          <td> <%= link_to 'Inactive Employees | ', employee_inactive_path %> </td>
          <td> <%= link_to 'Employees Under 18 | ', employee_younger_than_18_path%></td>
          <td> <%= link_to 'Employees 18 & Above | ', employee_is_18_or_older_path%></td>
+          <%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
          <td> <%= link_to 'Regulars | ', employee_regulars_path%></td>
          <td> <%= link_to 'Managers | ', employee_managers_path%></td>
          <td> <%= link_to 'Admins | ', employee_admins_path%></td>
+         <%end%>
       </tr>
     </tbody>
 </table>
@@ -40,8 +42,11 @@
         <td><%= employee.role %></td>
         <td><%= employee.active %></td>
         <td><%= link_to 'Show', employee %></td>
+        <%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
@@ -49,4 +54,7 @@
 
 <br>
 
+<%  if valid_employee!=nil &&  (valid_employee.role=="admin") %>
+
 <%= link_to 'Click to Create New Employee', new_employee_path %>
+<%end%>
