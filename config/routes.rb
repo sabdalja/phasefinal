@@ -25,13 +25,14 @@ Rails.application.routes.draw do
 
  # root to: 'home#home', as: :home
  #resources :demos, only: [:new, :create, :destroy]
-  get 'signup', to: 'users#new', as: 'signup'
+  #get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'demos#new', as: 'login'
   get 'logout', to: 'demos#destroy', as: 'logout'
 
   root 'demos#new'
   get "active" , to: "stores#active" , as: :store_active
   get "inactive" , to: "stores#inactive" , as: :store_inactive
+  
 
   get "active1" , to: "employees#active1" , as: :employee_active
   get "inactive1" , to: "employees#inactive1" , as: :employee_inactive
@@ -48,7 +49,18 @@ Rails.application.routes.draw do
   get "current" , to: "assignments#current" , as: :assignment_current
   get "past" , to: "assignments#past" , as: :assignment_past
 
- # get "upcoming" , to: "shifts#upcoming" , as: :shift_upcoming
+
+  get "upcoming" , to: "shifts#upcoming" , as: :shift_upcoming
+ # get "past1" , to: "shifts#past1" , as: :shift_past
+  get "bystore" , to: "shifts#bystore" , as: :shift_by_store
+  get "byemployee" , to: "shifts#byemployee" , as: :shift_by_employee
+  get "chronological" , to: "shifts#chronological" , as: :shift_chronological
+
+  
+  
+  
+    get "active2" , to: "jobs#active2" , as: :job_active
+
  
  resources :demos, only: [:new, :create, :destroy]
  #root 'demos#new'

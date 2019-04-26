@@ -21,6 +21,28 @@ class ShiftsController < ApplicationController
   def edit
   end
 
+  def upcoming
+      @shift_upcoming = Shift.upcoming.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def past
+      @shift_past = Shift.past.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def byemployee
+    @shift_by_employee = Shift.by_employee.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def bystore
+    @shift_by_store = Shift.by_store.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def chronological
+    @shift_chronological = Shift.chronological.paginate(:page => params[:page]).per_page(10)
+  end
+  
+
+  
   # POST /shifts
   # POST /shifts.json
   def create

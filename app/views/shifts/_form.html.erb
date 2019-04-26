@@ -16,20 +16,25 @@
     <%= form.number_field :assignment_id %>
   </div>
 
-  <div class="field">
+ 
+   <div class="field">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.text_field :date, prompt: "Date", class: "datepicker", :value =>
+    (form.object.date_of_birth.strftime('%B %d, %Y') if form.object.date != nil)%>
   </div>
+  
 
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.time_select :start_time %>
+   <div class="field">
+    <%= form.label :start_time, :class=>"active" %>
+    <%= form.time_field :start_time %>
   </div>
 
   <div class="field">
     <%= form.label :end_time %>
-    <%= form.time_select :end_time %>
+    <%= form.time_field :end_time %>
   </div>
+
+  
 
   <div class="field">
     <%= form.label :notes %>
